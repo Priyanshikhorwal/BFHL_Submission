@@ -25,9 +25,13 @@ public class BfhlService {
         int sum = 0;
         StringBuilder letters = new StringBuilder();
 
-        if (request.getData() != null) {
-            for (String str : request.getData()) {
-                if (str == null || str.isEmpty()) {
+        if (request != null && request.getData() != null) {
+            for (String element : request.getData()) {
+                if (element == null) {
+                    continue;
+                }
+                String str = element.trim();
+                if (str.isEmpty()) {
                     continue;
                 }
 

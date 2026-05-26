@@ -12,13 +12,22 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/bfhl")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class BfhlController {
 
     @Autowired
     private BfhlService bfhlService;
 
     @PostMapping
-    public ResponseEntity<BfhlResponse> processBfhlData(@RequestBody BfhlRequest request) {
+    public ResponseEntity<BfhlResponse> processBfhlData(@RequestBody(required = false) BfhlRequest request) {
+        if (request == null) {
+            BfhlResponse response = new BfhlResponse();
+            response.setIs_success(false);
+            response.setUser_id("priyanshi_khorwal_09052006");
+            response.setEmail("priyanshikhorwal231190@acropolis.in");
+            response.setRoll_number("0827CS231196");
+            return ResponseEntity.ok(response);
+        }
         BfhlResponse response = bfhlService.processData(request);
         return ResponseEntity.ok(response);
     }
