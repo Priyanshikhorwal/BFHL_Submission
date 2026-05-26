@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BfhlServiceTest {
 
-    private final BfhlService bfhlService = new BfhlServiceImpl();
+    private final BfhlService bfhlService = new BfhlService();
 
     @Test
     void testProcessDataWithMixedInput() {
@@ -20,7 +20,7 @@ class BfhlServiceTest {
 
         BfhlResponse response = bfhlService.processData(request);
 
-        assertTrue(response.isIs_success());
+        assertTrue(response.getIs_success());
         assertEquals("priyanshi_khorwal_09052006", response.getUser_id());
         assertEquals("priyanshikhorwal231190@acropolis.in", response.getEmail());
         assertEquals("0827CS231196", response.getRoll_number());

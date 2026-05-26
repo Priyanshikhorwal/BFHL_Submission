@@ -17,7 +17,7 @@ public class BfhlResponse {
     public BfhlResponse() {
     }
 
-    public boolean isIs_success() {
+    public boolean getIs_success() {
         return is_success;
     }
 
