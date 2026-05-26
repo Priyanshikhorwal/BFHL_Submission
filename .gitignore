@@ -1,0 +1,11 @@
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDEs and Editors
+/.idea/
+/*.iml
+.classpath
+.project
+.settings/
+.DS_Store
+bin/
