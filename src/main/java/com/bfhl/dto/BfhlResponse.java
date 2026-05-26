@@ -81,6 +81,10 @@ public class BfhlResponse {
         this.special_characters = special_characters;
     }
 
+    public List<String> getSepcial_characters() {
+        return special_characters;
+    }
+
     public String getSum() {
         return sum;
     }
