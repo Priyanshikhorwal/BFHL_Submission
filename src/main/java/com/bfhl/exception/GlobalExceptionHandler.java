@@ -10,6 +10,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<BfhlResponse> handleException(Exception ex) {
+        ex.printStackTrace();
         BfhlResponse response = new BfhlResponse();
         response.setIs_success(false);
         // Ensure standard fields are populated even on failure if requested,
